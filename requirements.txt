@@ -1,0 +1,11 @@
+Keras==2.2.0
+matplotlib==2.2.2
+nltk==3.3
+requests==2.20.1
+tensorflow==1.9.0
+gensim==3.4.0
+pandas==0.23.0
+numpy==1.15.1
+six==1.11.0
+python_dateutil==2.8.1
+scikit_learn==0.22.2.post1
