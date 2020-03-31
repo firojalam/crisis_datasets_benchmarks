@@ -167,7 +167,7 @@ nohup bash bin/bert_multiclass.sh hum-event-aware data/event_aware_en/crisis_con
 
 ```
 
-## Please cite the following papera if you are using the data:
+## Please cite the following paper if you are using the data:
 
 * *Firoj Alam, Hassan Sajjad, Muhammad Imran and Ferda Ofli, "Standardizing and Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing", arxiv. 2020.*
 

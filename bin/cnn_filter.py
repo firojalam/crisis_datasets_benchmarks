@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Mar  4 20:42:24 2017
-
-@author: firojalam
+@author: Firoj Alam
+@date: Last update, Mar 31, 2020
 """
 
 
@@ -16,29 +15,12 @@ import os
 import numpy as np
 np.random.seed(1337)
 
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-from keras.utils.np_utils import to_categorical
-from keras.layers import Dense, Input, Dropout, Activation, Flatten
 from keras.layers import Conv1D, MaxPooling1D, Embedding
-from keras.models import Model
-import sys
-from sklearn import preprocessing
-import pandas as pd
-import sklearn.metrics as metrics
-import data_process
-from keras.models import Sequential
-from keras.layers import Convolution1D, GlobalMaxPooling1D
-import subprocess
 import shlex
-from subprocess import Popen, PIPE  
-import keras.backend as K
-#from imblearn.over_sampling import SMOTE
+from subprocess import Popen, PIPE
 from collections import Counter
 import random
-from keras.layers import merge
-from keras.layers.normalization import BatchNormalization
-from keras.layers import concatenate 
+from keras.layers import concatenate
 from keras.constraints import max_norm
 from keras.layers import Input, Dense, Embedding, Conv2D, MaxPool2D, MaxPooling2D
 from keras.layers import Reshape, Flatten, Dropout, Concatenate
@@ -90,8 +72,6 @@ def text_cnn(embedding_matrix,word_index,MAX_NB_WORDS,EMBEDDING_DIM,MAX_SEQUENCE
     # embedding_layer=Embedding(output_dim=EMBEDDING_DIM, input_dim=nb_words, input_length=MAX_SEQUENCE_LENGTH,trainable=False)(inputs)
 
     ########## CNN: Filtering with Max pooling:
-    #nb_filter = 250
-    #filter_length = 3
     branches = [] # models to be merged
     filter_window_sizes=[2,3,4,5]
     pool_size=2
@@ -157,39 +137,15 @@ def kimCNN(embedding_matrix,word_index,MAX_NB_WORDS,EMBEDDING_DIM,MAX_SEQUENCE_L
     compiled keras model
     """
     print('Preparing embedding matrix.')
-    # num_words = min(MAX_NB_WORDS, len(word_index))
-    # nb_words = min(MAX_NB_WORDS, len(word_index) + 1)
-    # embedding_matrix = np.zeros((num_words, EMBEDDING_DIM))
-    # for word, i in word_index.items():
-    #     if i >= MAX_NB_WORDS:
-    #         continue
-    #     embedding_vector = embeddings_index.get(word)
-    #     if embedding_vector is not None:
-    #         # words not found in embedding index will be all-zeros.
-    #         embedding_matrix[i] = embedding_vector
-
-    # embedding_layer = Embedding(nb_words,
-    #                             EMBEDDING_DIM,
-    #                             weights=[embedding_matrix],
-    #                             input_length=MAX_SEQUENCE_LENGTH,
-    #                             trainable=True)
     nb_words = min(MAX_NB_WORDS, len(word_index)+1)
     embedding_layer = Embedding(output_dim=EMBEDDING_DIM, input_dim=nb_words, weights=[embedding_matrix], input_length=MAX_SEQUENCE_LENGTH,trainable=True)
 
-
-
-    print('Training model.')
-
-    # sequence_input = Input(shape=(MAX_SEQUENCE_LENGTH,), dtype='int32')
     embedded_sequences = embedding_layer(sequence_input)
     print(embedded_sequences.shape)
-
-
     # add first conv filter
     embedded_sequences = Reshape((MAX_SEQUENCE_LENGTH, EMBEDDING_DIM, 1))(embedded_sequences)
     x = Conv2D(300, (5, EMBEDDING_DIM), activation='relu')(embedded_sequences)
     x = MaxPool2D((MAX_SEQUENCE_LENGTH - 5 + 1, 1))(x)
-
 
     # add second conv filter.
     y = Conv2D(300, (4, EMBEDDING_DIM), activation='relu')(embedded_sequences)
@@ -207,9 +163,8 @@ def kimCNN(embedding_matrix,word_index,MAX_NB_WORDS,EMBEDDING_DIM,MAX_SEQUENCE_L
     # add third conv filter.
     w1 = Conv2D(300, (1, EMBEDDING_DIM), activation='relu')(embedded_sequences)
     w1 = MaxPool2D((MAX_SEQUENCE_LENGTH - 1 + 1, 1))(w1)
-    # concate the conv layers
-    # alpha = concatenate([x,y,z,z1])
-    alpha = concatenate([w1,z1 ])
+
+    alpha = concatenate([w1,z1])
 
     # flatted the pooled features.
     merged_model = Flatten()(alpha)
