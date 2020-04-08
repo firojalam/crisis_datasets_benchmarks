@@ -5,19 +5,19 @@
 ## Datasets
 * Download dataset:
 
-Before trying to start running any script, please download the dataset first. More detail of this dataset can be found here: https://crisisnlp.qcri.org/CrisisConsolidated.html and the associated published papers.
+Before trying to start running any script, please download the dataset first. More detail of this dataset can be found here: https://crisisnlp.qcri.org/crisis_datasets_benchmarks.html and the associated published papers.
 
-* Download the dataset (https://crisisnlp.qcri.org/data/CrisisConsolidated/CrisisConsolidated_v1.0.tar.gz)
+* Download the dataset (https://crisisnlp.qcri.org/data/crisis_datasets_benchmarks/crisis_datasets_benchmarks_v1.0.tar.gz)
 
-Assuming that your current working directory is YOUR_PATH/multimodal_social_media
+Assuming that your current working directory is YOUR_PATH/crisis_datasets_benchmarks
 ```
-tar -xvf CrisisConsolidated_v1.0.tar.gz
-mv CrisisConsolidated_v1.0/data_image $PWD/
+tar -xvf crisis_datasets_benchmarks_v1.0.tar.gz
+mv crisis_datasets_benchmarks_v1.0/data_image $PWD/
 ```
 
 **Different Versions of the dataset**
-* data/all_events_en
-* data/individual_event_en
+* data/all_data_en
+* data/individual_data_en
 * data/event_aware_en
 * data/class_label_mapped
 * data/initial_filtering
