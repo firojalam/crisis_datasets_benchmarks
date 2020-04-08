@@ -1,4 +1,4 @@
-# Crisis Consolidated Dataset
+# Crisis Dataset for Benchmarks
 
 
 
@@ -12,16 +12,16 @@ Before trying to start running any script, please download the dataset first. Mo
 Assuming that your current working directory is YOUR_PATH/crisis_datasets_benchmarks
 ```
 tar -xvf crisis_datasets_benchmarks_v1.0.tar.gz
-mv crisis_datasets_benchmarks_v1.0/data_image $PWD/
+mv crisis_datasets_benchmarks_v1.0 YOUR_PATH/crisis_datasets_benchmarks
 ```
 
-**Different Versions of the dataset**
-* data/all_data_en
-* data/individual_data_en
-* data/event_aware_en
-* data/class_label_mapped
-* data/initial_filtering
-* data/data_split_all_lang
+**Different versions of the dataset**
+* data/all_data_en -- all combined english dataset used for the experiments
+* data/individual_data_en -- consists of data used for the experiments as individual data source such as crisisnlp and crisislex
+* data/event_aware_en -- all combined english dataset with event tag (fire, earthquake, flood, ...) are tagged
+* data/data_split_all_lang -- all combined dataset with their train/dev and test splits
+* data/initial_filtering -- all combined dataset duplicate removed data
+* data/class_label_mapped -- all combined dataset initial set of dataset where class label mapped
 
 
 
@@ -172,14 +172,14 @@ nohup bash bin/bert_multiclass.sh hum-event-aware data/event_aware_en/crisis_con
 * *Firoj Alam, Hassan Sajjad, Muhammad Imran and Ferda Ofli, "Standardizing and Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing", arxiv. 2020.*
 
 ```bib
-@inproceedings{crisisConsolidated2020,
+@inproceedings{firojalamcrisisbenchmark2020,
   Author = {Firoj Alam and Hassan Sajjad and Muhammad Imran and Ferda Ofli},
   Title = {Standardizing and Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing},
   Year = {2020}
 }
 ```
 
-**and the follwing associated papers**
+**and the following associated papers**
 
 * *Muhammad Imran, Prasenjit Mitra, Carlos Castillo. Twitter as a Lifeline: Human-annotated Twitter Corpora for NLP of Crisis-related Messages. In Proceedings of the 10th Language Resources and Evaluation Conference (LREC), 2016, Slovenia.*
 * *A. Olteanu, S. Vieweg, C. Castillo. 2015. What to Expect When the Unexpected Happens: Social Media Communications Across Crises. In Proceedings of the ACM 2015 Conference on Computer Supported Cooperative Work and Social Computing (CSCW '15). ACM, Vancouver, BC, Canada.*
