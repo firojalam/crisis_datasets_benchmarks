@@ -1,6 +1,6 @@
 Keras==2.2.0
 matplotlib==2.2.2
-nltk==3.3
+nltk==3.4.5
 requests==2.20.1
 tensorflow==1.9.0
 gensim==3.4.0
