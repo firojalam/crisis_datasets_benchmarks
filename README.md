@@ -1,6 +1,6 @@
 # CrisisBench: Crisis Dataset for Benchmarks
 
-The crisis benchmark dataset consists data from several different data sources such as CrisisLex (CrisisLex26, CrisisLex6), CrisisNLP, SWDM2013, ISCRAM13, Disaster Response Data (DRD), Disasters on Social Media (DSM), CrisisMMD and data from AIDR. The purpose of this work was to map the class label, remove duplicates and provide a benchmark results for the community. More details of this dataset can be found in our work [CrisisBench: Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing](https://ojs.aaai.org/index.php/ICWSM/article/view/18115)
+The **CrisisBench** dataset consists data from several different data sources such as CrisisLex (CrisisLex26, CrisisLex6), CrisisNLP, SWDM2013, ISCRAM13, Disaster Response Data (DRD), Disasters on Social Media (DSM), CrisisMMD and data from AIDR. The purpose of this work was to map the class label, remove duplicates and provide a benchmark results for the community. More details of this dataset can be found in our work [CrisisBench: Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing](https://ojs.aaai.org/index.php/ICWSM/article/view/18115)
 
 __Table of contents:__
 - [Datasets](#datasets)
