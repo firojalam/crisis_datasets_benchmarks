@@ -1,9 +1,20 @@
-# Crisis Dataset for Benchmarks
+# CrisisBench: Crisis Dataset for Benchmarks
 
+The crisis benchmark dataset consists data from several different data sources such as CrisisLex (CrisisLex26, CrisisLex6), CrisisNLP, SWDM2013, ISCRAM13, Disaster Response Data (DRD), Disasters on Social Media (DSM), CrisisMMD and data from AIDR. The purpose of this work was to map the class label, remove duplicates and provide a benchmark results for the community. More details of this dataset can be found in our work [CrisisBench: Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing](https://ojs.aaai.org/index.php/ICWSM/article/view/18115)
+
+__Table of contents:__
+- [Datasets](#datasets)
+  - [Download](#download)
+  - [Directory Structure](#directory-structure)
+- [Experiments](#experiments)
+- [Publication](#publication)
+- [Licensing](#licensing)
+- [Contact](#contact)
 
 
 ## Datasets
-* Download dataset:
+
+### Download:
 
 Before trying to start running any script, please download the dataset first. More detail of this dataset can be found here: https://crisisnlp.qcri.org/crisis_datasets_benchmarks.html and the associated published papers.
 
@@ -15,14 +26,13 @@ tar -xvf crisis_datasets_benchmarks_v1.0.tar.gz
 mv crisis_datasets_benchmarks_v1.0 YOUR_PATH/crisis_datasets_benchmarks
 ```
 
-**Different versions of the dataset**
+### Directory Structure
 * data/all_data_en -- all combined english dataset used for the experiments
 * data/individual_data_en -- consists of data used for the experiments as individual data source such as crisisnlp and crisislex
 * data/event_aware_en -- all combined english dataset with event tag (fire, earthquake, flood, ...) are tagged
 * data/data_split_all_lang -- all combined dataset with their train/dev and test splits
 * data/initial_filtering -- all combined dataset duplicate removed data
 * data/class_label_mapped -- all combined dataset initial set of dataset where class label mapped
-
 
 
 ## Experiments
@@ -167,15 +177,23 @@ nohup bash bin/bert_multiclass.sh hum-event-aware data/event_aware_en/crisis_con
 
 ```
 
-## Please cite the following paper if you are using the data:
+## Publication
+Please cite the following paper if you are using the data:
 
-* *Firoj Alam, Hassan Sajjad, Muhammad Imran and Ferda Ofli, "Standardizing and Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing", arxiv. 2020.*
+* *Firoj Alam, Hassan Sajjad, Muhammad Imran and Ferda Ofli, CrisisBench: Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing, In ICWSM, 2021. [paper](https://ojs.aaai.org/index.php/ICWSM/article/view/18115)*
 
 ```bib
-@inproceedings{firojalamcrisisbenchmark2020,
-  Author = {Firoj Alam and Hassan Sajjad and Muhammad Imran and Ferda Ofli},
-  Title = {Standardizing and Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing},
-  Year = {2020}
+@inproceedings{alam2020standardizing,
+  title={{CrisisBench}: Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing},
+  author={Alam, Firoj and Sajjad, Hassan and Imran, Muhammad and Ofli, Ferda},
+  booktitle={Proceedings of the International AAAI Conference on Web and Social Media},
+  series = {ICWSM~'21},
+ month={May}, 
+ pages={923-932},  
+ number={1},
+ volume={15}, 
+ url={https://ojs.aaai.org/index.php/ICWSM/article/view/18115},
+ year={2021}
 }
 ```
 
@@ -230,3 +248,10 @@ nohup bash bin/bert_multiclass.sh hum-event-aware data/event_aware_en/crisis_con
   year={2013}
 }
 ```
+
+## Licensing
+This dataset is published under CC BY-NC-SA 4.0 license, which means everyone can use this dataset for non-commercial research purpose: https://creativecommons.org/licenses/by-nc/4.0/.
+
+## Contact
+Please check the paper for contact information.
+
