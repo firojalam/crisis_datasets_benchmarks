@@ -184,7 +184,7 @@ Please cite the following paper if you are using the data:
 
 ```bib
 @inproceedings{alam2020standardizing,
-  title={{CrisisBench}: Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing},
+  title={CrisisBench: Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing},
   author={Alam, Firoj and Sajjad, Hassan and Imran, Muhammad and Ofli, Ferda},
   booktitle={Proceedings of the International AAAI Conference on Web and Social Media},
   series = {ICWSM~'21},
